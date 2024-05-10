@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .card{
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+        height:400px;
+        width:600px;
+        color:Tomato;
+        background:linear-gradient(to right top, red, yellow, blue);
+
+        border-radius:20px;
+        text-align:center;
+        font-size:18px;
+        font-weight:bold;
+
+        }
+
+        .hard{
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+        color:grey;
+        background:linear-gradient(to right top,#9fa8fe, #c7004c, #ffaaaa, #00fff0, #f9fd50);
+        }
+
+        .cont{
+        padding:5px;
+        scrollbar-width: 3px;
+        max-height: 100%;
+        overflow-y: auto;
+        }
+
+        .cont::-webkit-scrollbar {
+        width: 20px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="hard">
+    <h1> Student Testimonials :</h1>
+
+    {% for i in show %}
+    <div class="card">
+        <br><br>
+        Student : {{i.username}}<br><br>
+        <div class="cont">
+            {{i.feedback}}<br><br>
+        </div>
+        {{i.created_date}}<br><br>
+
+    </div>
+    <br>
+    {% endfor %}
+
+</div>
+</body>
+</html>
